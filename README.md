@@ -1,5 +1,16 @@
 # Machine Learning
 
+## Ordinary Least Squares (OLS)
+It is a method used in statistics and econometrics to estimate the parameters of a linear regression model.
+
+In the context of linear regression, the OLS model aims to find the best-fitting line that minimizes the sum of the squared differences between the observed dependent variable values and the predicted values based on the independent variables.
+
+The "ordinary" in Ordinary Least Squares refers to the fact that the method assumes that the errors or residuals of the model are normally distributed and have constant variance (known as homoscedasticity). The "least squares" part of the name refers to the minimization of the sum of the squared errors.
+
+The OLS model estimates the coefficients (slopes) and intercept of the linear regression equation, allowing you to explore the relationship between the dependent variable and one or more independent variables. The coefficients indicate the direction and magnitude of the relationship, while the intercept represents the estimated value of the dependent variable when all independent variables are zero.
+
+The OLS method is widely used in various fields, including economics, finance, social sciences, and data analysis, to analyze and model the relationships between variables using linear regression.
+
 ## Objective functions
 An objective function, also known as a cost function, loss function, or optimization function, is a mathematical function that defines the goal or objective of an optimization problem. In optimization, the objective function quantifies the performance or quality of a solution or a set of parameters.
 
