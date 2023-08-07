@@ -1,5 +1,25 @@
 # Machine Learning
 
+## Model = Training (Algorithm + Data)
+A machine learning model is a mathematical representation or algorithm that learns patterns and relationships from data to make predictions or take decisions without being explicitly programmed. It is the result of training a machine learning algorithm on a dataset to capture patterns, extract insights, and generalize to new, unseen data.
+
+In essence, a machine learning model is a mapping from input data to output predictions or decisions. It takes input features or variables (also known as independent variables) and produces output predictions or labels (also known as dependent variables) based on the learned patterns from the training data.
+
+The model's structure and parameters determine how it represents and processes the input data. The process of training a model involves adjusting these parameters to minimize the difference between the predicted outputs and the actual labels in the training data. The trained model can then be used to make predictions or classify new, unseen data.
+
+Machine learning models can take various forms, depending on the problem and the algorithm used. Some common types of machine learning models include:
+- Linear Regression: Models the relationship between independent variables and a continuous dependent variable using a linear equation.
+- Logistic Regression: Models the probability of a binary outcome or class membership based on independent variables using a logistic function.
+- Decision Trees: Models decisions or classifications by splitting the data based on a series of hierarchical rules or conditions.
+- Random Forest: An ensemble model that combines multiple decision trees to make predictions by averaging or voting.
+- Support Vector Machines (SVM): Models data by finding a hyperplane that best separates different classes or groups.
+- Neural Networks: Deep learning models composed of interconnected layers of artificial neurons that can learn complex patterns and relationships.
+- Naive Bayes: A probabilistic model based on Bayes' theorem that predicts the probability of different outcomes based on independent features.
+
+These are just a few examples, and there are many other types of machine learning models available, each suitable for different types of data and problem domains.
+
+Machine learning models enable automated decision-making, pattern recognition, and predictive capabilities across a wide range of applications, including image and speech recognition, natural language processing, recommendation systems, fraud detection, and more.
+
 ## Ordinary Least Squares (OLS)
 It is a method used in statistics and econometrics to estimate the parameters of a linear regression model.
 
