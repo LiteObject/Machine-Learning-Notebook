@@ -67,3 +67,20 @@ Neural networks specifically designed for processing grid-like data, such as ima
 ### Recurrent Neural Networks (RNN)
 Neural networks that can process sequential data by utilizing feedback connections, making them suitable for tasks like natural language processing and speech recognition.
 
+### Activation Function
+A mathematical function applied to the output of a neuron in a neural network, introducing non-linearity and enabling complex mappings between inputs and outputs.
+
+### Batch Size
+The number of training examples used in each iteration of the training process. Larger batch sizes can lead to faster training, but may require more memory.
+
+### Learning Rate
+A hyperparameter that determines the step size at which the model's parameters are updated during training. It influences the speed and stability of the learning process.
+
+### Dropout
+A regularization technique used during training to randomly deactivate a certain percentage of neurons in a neural network, reducing overfitting and improving generalization.
+
+### Backpropagation
+An algorithm used to compute the gradients of the loss function with respect to the parameters of a neural network, enabling efficient parameter updates during training.
+
+### Bias
+An additional parameter in a machine learning model that allows for shifting the output in a non-linear manner, providing flexibility and improving model performance.
