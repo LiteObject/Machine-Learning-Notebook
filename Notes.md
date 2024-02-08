@@ -18,3 +18,52 @@ Inference refers to the process of using a trained model to make predictions or 
 data. It involves applying the learned knowledge from the model to make decisions or generate outputs. For example, if 
 a model is trained to classify images of cats and dogs, inference would involve using the trained model to predict whether 
 a new image contains a cat or a dog. Inference is a crucial step in utilizing machine learning models for real-world applications.
+
+### Supervised Learning
+A type of ML where the model learns from labeled data to make predictions or classifications.
+
+### Unsupervised Learning
+ML technique where the model learns patterns and structures from unlabeled data without specific guidance.
+
+### Overfitting
+When a model performs well on training data but fails to generalize to new, unseen data due to excessive complexity.
+
+### Underfitting
+When a model is too simple to capture the underlying patterns in the data, resulting in poor performance.
+
+### Regularization
+Techniques used to prevent overfitting by adding additional constraints or penalties to the model during training.
+
+### Feature Extraction
+The process of selecting or transforming relevant features from raw data to improve model performance.
+
+### Loss Function
+A measure of how well a model's predictions align with the actual values, used to optimize the model during training.
+
+### Gradient Descent
+An optimization algorithm that adjusts the model's parameters iteratively to minimize the loss function.
+
+### Bias-Variance Tradeoff
+The balance between a model's ability to fit the training data (low bias) and its ability to generalize to new data (low variance). Finding the right balance is crucial to avoid underfitting or overfitting.
+
+### Hyperparameters
+Parameters set before training that influence the model's learning process, such as learning rate or number of layers.
+
+### Cross-Validation
+A technique to assess model performance by splitting data into multiple subsets for training and evaluation.
+
+### Ensemble Learning
+A technique that combines multiple models, known as an ensemble, to make predictions or classifications. It often leads to improved performance and robustness.
+
+### Transfer Learning
+The practice of leveraging knowledge gained from training one model on a specific task to improve the performance of a different but related task.
+
+### Reinforcement Learning
+A type of Machine Learning where an agent learns to make decisions by interacting with an environment and receiving feedback in the form of rewards or penalties.
+
+### Convolutional Neural Networks (CNN)
+Neural networks specifically designed for processing grid-like data, such as images or audio, by using convolutional layers to extract relevant features.
+
+### Recurrent Neural Networks (RNN)
+Neural networks that can process sequential data by utilizing feedback connections, making them suitable for tasks like natural language processing and speech recognition.
+
