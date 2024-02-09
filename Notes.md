@@ -84,3 +84,9 @@ An algorithm used to compute the gradients of the loss function with respect to 
 
 ### Bias
 An additional parameter in a machine learning model that allows for shifting the output in a non-linear manner, providing flexibility and improving model performance.
+
+### Chain-of-thought
+It refers to the sequential flow of reasoning or decision-making processes within a model. It represents how information is processed and transformed as it moves through different layers or components of the model.
+
+### Token
+A token refers to a unit of text that is treated as a single entity. It can be a word, a character, or even a subword, depending on how the text is processed. For example, in natural language processing tasks, a sentence can be tokenized into individual words or subwords, which are then used as inputs for various algorithms and models. Tokenization helps in organizing and analyzing text data in a structured manner.
