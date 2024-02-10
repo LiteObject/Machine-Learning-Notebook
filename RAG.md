@@ -70,6 +70,6 @@ Here's a breakdown of the diagram:
 - The **Query** is passed to a **Retrieval Model**, which retrieves **Relevant Documents**.
 - These **Relevant Documents** are then used to enhance the **Prompt Template**, providing additional context for the LLM.
 
-## Related Concepts:
+### Related Concepts:
 
 - The diagram also acknowledges other related concepts, such as **Relevance Scoring**, **Summarization**, **Question Answering**, and **Dialogue**. These concepts can be integrated into the RAG process to improve its effectiveness.
