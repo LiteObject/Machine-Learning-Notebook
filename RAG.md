@@ -53,7 +53,7 @@ Here's a breakdown of the diagram:
 
 - The process starts with a **Query**, which is used to retrieve relevant **Documents**.
 - The documents are then **Split** into smaller chunks for efficient processing.
-- **Embeddings** are generated for each chunk and stored in a VectorDB.
+- **Embeddings** are generated for each chunk and stored in a **VectorDB**.
 
 ### Context Creation:
 
