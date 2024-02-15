@@ -7,6 +7,10 @@ It combines principles from software engineering and data science to ensure the 
 MLOps involves tasks such as version control, model training, testing, deployment, and continuous monitoring to ensure the models perform well and remain up-to-date. It helps organizations effectively manage and scale their machine learning workflows.
 
 ## ML Pipeline
+- Problem Definition -->
+  - Data Sourcing -> Data Preparation -->
+    - Model Training -> Model Evaluation -->
+      - Model Deployment -> Model Monitoring -->
 
 ## MLOps Ecosystem
 
