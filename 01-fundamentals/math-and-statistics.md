@@ -1,4 +1,4 @@
-# Math and State for Machine Learning
+# Mathematics and Statistics for Machine Learning
 
 ## Linear Algebra
 Matrices, vectors, matrix operations, and linear transformations are fundamental to many AI and ML algorithms.
