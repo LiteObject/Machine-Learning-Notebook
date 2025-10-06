@@ -2,7 +2,7 @@
 
 A comprehensive collection of machine learning concepts, algorithms, and techniques organized for easy learning and reference.
 
-## 📚 Table of Contents
+## Table of Contents
 
 ### [01 - Fundamentals](./01-fundamentals/)
 Essential concepts and mathematical foundations for understanding machine learning.
@@ -42,7 +42,7 @@ Understanding different classifications of artificial intelligence.
 
 - **[AI Classifications](./06-ai-types/ai-classifications.md)** - Types of AI based on capabilities and functionality
 
-## 🚀 Getting Started
+## Getting Started
 
 If you're new to machine learning, we recommend following this learning path:
 
@@ -52,14 +52,14 @@ If you're new to machine learning, we recommend following this learning path:
 4. **Advanced Topics** - Once comfortable with basics, explore specialized topics like RAG and multi-agent systems
 5. **Deployment** - Learn about MLOps and bringing models to production
 
-## 📖 How to Use This Repository
+## How to Use This Repository
 
 - Each section builds upon previous knowledge
 - Use the terminology guide as a reference while reading other sections
 - Examples and applications are provided throughout
 - Cross-references link related concepts across sections
 
-## 🎯 Key Concepts Summary
+## Key Concepts Summary
 
 **Machine Learning** is the process of training algorithms to make predictions or decisions based on data. The fundamental equation is:
 
@@ -72,7 +72,7 @@ The main types of learning are:
 
 Common challenges include overfitting, underfitting, and the bias-variance tradeoff. Success depends on choosing the right algorithm, quality data, and proper evaluation methods.
 
-## 📊 Quick Reference
+## Quick Reference
 
 ### Algorithm Selection Guide
 - **Small dataset**: Naive Bayes, KNN, Simple linear models
