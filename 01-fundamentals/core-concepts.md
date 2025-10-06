@@ -59,6 +59,8 @@ An optimization algorithm that adjusts the model's parameters iteratively to min
 ### Backpropagation
 An algorithm used to compute the gradients of the loss function with respect to the parameters of a neural network, enabling efficient parameter updates during training.
 
+Video Explanation: [Backpropagation](https://www.youtube.com/watch?v=S5AGN9XfPK4)
+
 ### Hyperparameters
 Parameters set before training that influence the model's learning process, such as learning rate or number of layers.
 
