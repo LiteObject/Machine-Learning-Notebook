@@ -45,7 +45,7 @@
     - SGD updates weights after each sample (noisy but can escape local minima). Mini-batch updates after a small group of samples (balances computation efficiency with gradient stability). Batch GD uses entire dataset (stable but computationally expensive).
 
 *   **What are some common optimization algorithms used in training deep neural networks?**
-    - Adam (adaptive learning rates, most popular), SGD with momentum (adds velocity), RMSprop (adapts learning rate per parameter), AdaGrad (accumulates gradients), AdamW (Adam with weight decay).
+    - Adam (adaptive learning rates, most popular), SGD with momentum (adds velocity), RMSprop (adapts learning rate per parameter), AdaGrad (accumulates gradients), AdamW (Adam with decoupled weight decay).
 
 *   **Explain the concept of gradient clipping and when it is used in training neural networks.**
     - Gradient clipping limits the maximum gradient value to prevent exploding gradients. Commonly used in RNNs where long sequences can cause gradient explosion. Clips by value or by norm.
@@ -144,7 +144,10 @@
     - 1) Define search space 2) Choose search strategy 3) Use validation set for evaluation 4) Track experiments 5) Select best configuration 6) Final evaluation on test set. Use tools like Weights & Biases, Optuna.
 
 *   **How do you evaluate the performance of a deep learning model?**
-    - Use appropriate metrics (accuracy, precision, recall, F1, AUC for classification; MSE, MAE for regression). Split data into train/val/test. Consider computational efficiency, interpretability, and robustness.
+    - Use appropriate metrics (accuracy, precision, recall, F1, AUC for classification; MSE, MAE for regression). For vision, add IoU/Dice; for detection, use mAP; for NLP, BLEU/ROUGE; for ranking, NDCG. Split data into train/val/test and monitor computational efficiency, interpretability, and robustness.
+
+*   **What are some task-specific loss functions used in deep learning?**
+    - Classification: cross-entropy, focal loss for imbalance. Regression: MSE, MAE, Huber. Metric learning: contrastive and triplet loss. Segmentation: Dice or IoU loss. Generative models: adversarial loss (GANs), KL divergence (VAEs).
 
 ### **9. Data Handling & Preprocessing**
 *   **How do you handle imbalanced datasets in deep learning, especially in classification tasks?**
@@ -167,7 +170,10 @@
     - 1) Define problem 2) Prepare data 3) Choose architecture 4) Implement model 5) Train with validation 6) Tune hyperparameters 7) Evaluate on test set 8) Deploy and monitor.
 
 *   **What are some common deep learning frameworks?**
-    - PyTorch (research-friendly), TensorFlow (production-ready), JAX (functional, fast), Keras (high-level API), MXNet, Caffe, PaddlePaddle. Each has strengths for different use cases.
+    - PyTorch (research-friendly, dynamic graphs), TensorFlow (production-ready ecosystem), JAX (functional, XLA-compiled), Keras (high-level API), MXNet, Caffe, PaddlePaddle. Match the framework to team skills, tooling, and deployment needs.
+
+*   **When would you choose PyTorch over TensorFlow, and vice versa?**
+    - PyTorch: rapid prototyping, academic research, dynamic architectures. TensorFlow: large-scale production pipelines, mobile/embedded deployment via TF Lite, tight integration with TensorFlow Serving. Many teams prototype in PyTorch then port if TensorFlow tooling is required.
 
 *   **Describe the process of training a deep learning model on a distributed computing environment.**
     - Data parallelism: split batch across devices. Model parallelism: split model across devices. Use frameworks like Horovod, PyTorch DDP, or TensorFlow distribution strategies. Handle synchronization, communication overhead.
@@ -210,3 +216,100 @@
 
 *   **What is the role of GPUs in deep learning?**
     - GPUs enable parallel processing of matrix operations (core of neural networks). Thousands of cores handle concurrent calculations, dramatically speeding up training compared to CPUs. Essential for modern deep learning.
+
+### **14. Model Interpretability & Explainability**
+*   **What is model interpretability and why is it important in deep learning?**
+    - Interpretability means understanding how inputs influence predictions. It builds trust, helps debug failures, satisfies regulations (e.g., GDPR), and prevents harmful decisions.
+
+*   **What techniques can explain deep learning model predictions?**
+    - Post-hoc tools like LIME, SHAP, Grad-CAM, integrated gradients, and attention heat maps highlight influential features. Built-in approaches include interpretable architectures and sparse or monotonic constraints.
+
+*   **How do you address explainability requirements in regulated industries?**
+    - Combine documentation, surrogate interpretable models, and explanation tooling. Provide audit logs, confidence scores, and human-in-the-loop review to meet compliance.
+
+### **15. Production & Deployment**
+*   **How do you optimize a deep learning model for inference?**
+    - Techniques include quantization, pruning, knowledge distillation, operator fusion, and converting to optimized runtimes like TensorRT, ONNX Runtime, or Core ML.
+
+*   **What is model versioning and why does it matter?**
+    - Versioning tracks model artifacts, configs, and data snapshots, enabling reproducibility, rollback, and A/B testing. Tools: MLflow, DVC, SageMaker Model Registry.
+
+*   **How do you monitor deep learning models in production?**
+    - Log predictions, track data/concept drift, watch latency and resource usage, and set alerts for metric degradation. Use shadow deployments and periodic re-evaluation on fresh labels.
+
+*   **What are the key differences between training and inference environments?**
+    - Training favors throughput, large batches, and GPUs/TPUs. Inference needs low latency, small batches, often CPU/edge hardware, and strict memory limits, so models are often compressed.
+
+*   **How do you deploy deep learning models to edge devices?**
+    - Use lightweight architectures, apply quantization and pruning, convert to edge runtimes (TF Lite, ONNX, Core ML), and manage updates via over-the-air pipelines while monitoring device constraints.
+
+### **16. Advanced Optimization Techniques**
+*   **What is mixed precision training and why use it?**
+    - Mixed precision combines FP16 activations with FP32 master weights to reduce memory use and boost throughput while maintaining accuracy via loss scaling.
+
+*   **What is gradient accumulation and when is it helpful?**
+    - Gradient accumulation sums gradients over multiple mini-batches before updating weights, effectively simulating larger batches when GPU memory is limited.
+
+*   **Can you explain curriculum learning?**
+    - Curriculum learning trains on easier examples first and gradually increases difficulty, improving convergence and generalization for tasks like reinforcement learning or low-resource NLP.
+
+*   **What learning rate scheduling strategies have you used?**
+    - Step decay, cosine annealing, warm restarts, cyclical learning rates, and linear warm-up stabilize training and can reach better minima than a constant rate.
+
+### **17. Architectural Techniques & Insights**
+*   **What is the difference between batch normalization and layer normalization?**
+    - Batch norm normalizes across the batch dimension and works best with large batches. Layer norm normalizes across feature dimensions per example, making it suitable for RNNs/Transformers and small-batch settings.
+
+*   **How do residual or skip connections help deep networks?**
+    - They add identity shortcuts that ease gradient flow, mitigate vanishing gradients, and allow training of very deep models (e.g., ResNets, Transformers).
+
+*   **What is group normalization and when would you use it?**
+    - Group norm normalizes over groups of channels, independent of batch size. It is useful in tasks with tiny batches such as detection or medical imaging.
+
+*   **What is the lottery ticket hypothesis?**
+    - It posits that dense networks contain sparse subnetworks that can train to similar accuracy from the same initialization, suggesting pruning and sparse training strategies.
+
+*   **Why are positional encodings needed in Transformers?**
+    - Self-attention is order-agnostic, so positional encodings inject sequence order using sinusoidal functions or learned embeddings, enabling the model to reason about token positions.
+
+### **18. Emerging Architectures & Paradigms**
+*   **What are Vision Transformers (ViTs) and how do they differ from CNNs?**
+    - ViTs split images into patches and apply self-attention globally, capturing long-range dependencies. CNNs use localized convolutions. ViTs need more data or heavy augmentation but scale well.
+
+*   **What is self-supervised learning?**
+    - Models learn from unlabeled data via pretext tasks (contrastive learning, masked prediction). This produces representations that transfer well with minimal labeled data.
+
+*   **How do diffusion models work?**
+    - They learn to reverse a gradual noising process, denoising step-by-step to generate high-quality samples. Training optimizes a noise prediction loss.
+
+*   **What is neural architecture search (NAS)?**
+    - NAS automates architecture design using search algorithms (reinforcement learning, evolutionary, gradient-based) to find architectures better than hand-crafted ones under constraints.
+
+*   **What is prompt engineering in large language models?**
+    - Designing input prompts (instructions, examples) to steer model behavior without changing weights. Techniques include few-shot prompting and chain-of-thought cues.
+
+### **19. Computational Efficiency**
+*   **How do you estimate the computational cost of a neural network?**
+    - Calculate FLOPs and parameter counts per layer, then validate with profiler tools. Consider hardware-specific throughput to project training/inference time.
+
+*   **How do you profile and optimize GPU utilization?**
+    - Use profilers (PyTorch Profiler, Nsight) to spot bottlenecks, overlap data loading with compute, tune batch size, enable mixed precision, and cache preprocessed data.
+
+*   **What is the difference between data, model, and pipeline parallelism?**
+    - Data parallelism splits batches across devices, model parallelism splits layers/weights, pipeline parallelism shards stages across devices to keep them busy via micro-batching.
+
+*   **How do memory footprint considerations influence architecture design?**
+    - Limit activation sizes, use checkpointing, share weights, and prefer depthwise separable or grouped convolutions. Memory constraints often dictate batch size and sequence length.
+
+### **20. Data Strategy & Curation**
+*   **How do you handle multi-modal data in deep learning?**
+    - Use modality-specific encoders (CNN for images, Transformer for text) and fuse representations via concatenation, attention, or cross-modal transformers.
+
+*   **What is active learning and when is it useful?**
+    - Active learning iteratively selects the most informative unlabeled samples for annotation, reducing labeling cost while maintaining accuracy.
+
+*   **How do you design effective data augmentation pipelines?**
+    - Tailor augmentations to task/domain (e.g., flips for vision, MixUp, SpecAugment for audio), balance diversity with realism, and monitor validation metrics to avoid hurting performance.
+
+*   **When would you generate synthetic data and how?**
+    - Use synthetic data when real data is scarce, sensitive, or rare. Techniques include simulation engines, GANs, diffusion models, or data augmentation frameworks, followed by validation against real samples.
