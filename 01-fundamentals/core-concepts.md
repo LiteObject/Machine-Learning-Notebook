@@ -9,13 +9,18 @@ In essence, a machine learning model is a mapping from input data to output pred
 
 ## Common Types of Machine Learning Models
 
+### Regression Models
 - **Linear Regression**: Models the relationship between independent variables and a continuous dependent variable using a linear equation.
+
+### Classification Models
 - **Logistic Regression**: Models the probability of a binary outcome or class membership based on independent variables using a logistic function.
+- **Naive Bayes**: A probabilistic model based on Bayes' theorem that predicts the probability of different outcomes based on independent features.
+
+### Both Classification & Regression
 - **Decision Trees**: Models decisions or classifications by splitting the data based on a series of hierarchical rules or conditions.
 - **Random Forest**: An ensemble model that combines multiple decision trees to make predictions by averaging or voting.
-- **Support Vector Machines (SVM)**: Models data by finding a hyperplane that best separates different classes or groups.
+- **Support Vector Machines (SVM)**: Models data by finding a hyperplane that best separates different classes or groups. Can be extended to regression (SVR).
 - **Neural Networks**: Deep learning models composed of interconnected layers of artificial neurons that can learn complex patterns and relationships.
-- **Naive Bayes**: A probabilistic model based on Bayes' theorem that predicts the probability of different outcomes based on independent features.
 
 ## Ordinary Least Squares (OLS)
 It is a method used in statistics and econometrics to estimate the parameters of a linear regression model.
